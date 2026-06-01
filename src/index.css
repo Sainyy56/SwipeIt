@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Nunito', sans-serif;
+  background-color: #F5E6D3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sketch-card {
+  background: #FDF6EE;
+  border: 2.5px solid #2C1A0E;
+  border-radius: 14px;
+  box-shadow: 4px 4px 0 #2C1A0E;
+}
+
+.sketch-card-sm {
+  background: #FDF6EE;
+  border: 2px solid #2C1A0E;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 #2C1A0E;
+}
+
+.sketch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  border: 2px solid #2C1A0E;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 #2C1A0E;
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+}
+.sketch-btn:hover  { box-shadow: 4px 4px 0 #2C1A0E; transform: translate(-1px, -1px); }
+.sketch-btn:active { box-shadow: 1px 1px 0 #2C1A0E; transform: translate(2px,  2px);  }
+
+.sketch-input {
+  font-family: 'Nunito', sans-serif;
+  background: #fff;
+  border: 2px solid #2C1A0E;
+  border-radius: 8px;
+  color: #2C1A0E;
+  outline: none;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.sketch-input:focus {
+  border-color: #C17D3C;
+  box-shadow: 3px 3px 0 #C17D3C;
+}
+
+.display { font-family: 'Caveat', cursive; }
+
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+.slide-up { animation: slideUp 0.35s ease forwards; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 0.9s linear infinite; }
